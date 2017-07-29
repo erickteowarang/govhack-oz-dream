@@ -740,6 +740,15 @@ input[type="button"],
 button {
   line-height: calc(2.75rem - 2px); }
 
+#map {
+  height: 100vh;
+  float: right;
+  width: 70%; }
+
+#mapwrapper {
+  background-color: white;
+  min-height: 100vh; }
+
 /* BG */
 #bg {
   -moz-transform: scale(1.0);
