@@ -1,4 +1,5 @@
 @import url(font-awesome.min.css);
+@import url(glyphicon.css);
 @import url("https://fonts.googleapis.com/css?family=Lato|Montserrat");
 /* Reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -743,11 +744,58 @@ button {
 #map {
   height: 100vh;
   float: right;
-  width: 70%; }
+  width: 75%; }
 
 #mapwrapper {
   background-color: white;
   min-height: 100vh; }
+  #mapwrapper::before, #mapwrapper::after {
+    content: "";
+    display: table; }
+  #mapwrapper::after {
+    clear: both; }
+
+.map-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  float: left;
+  width: 25%;
+  height: 100vh;
+  padding: 1em 1.5em 1em 1.5em;
+  background: #00008B; }
+
+.option-block h3 {
+  letter-spacing: 1px;
+  font-size: 16px;
+  text-transform: none;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  cursor: pointer; }
+  .option-block h3::after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e080";
+    float: right;
+    color: white; }
+.option-block .single-option {
+  margin-bottom: 20px; }
+  .option-block .single-option label {
+    letter-spacing: 1px; }
+.option-block .expandable-block {
+  transition: padding 0.5s, max-height 0.7s;
+  padding-bottom: 0px;
+  max-height: 0;
+  overflow: hidden; }
+  .option-block .expandable-block input[type='text'] {
+    height: 2.875rem; }
+.option-block .btn-address {
+  margin-top: 25px; }
+.option-block.expanded h3::after {
+  content: "\e114"; }
+.option-block.expanded .expandable-block {
+  padding-bottom: 20px;
+  height: auto;
+  max-height: 300px; }
 
 /* BG */
 #bg {

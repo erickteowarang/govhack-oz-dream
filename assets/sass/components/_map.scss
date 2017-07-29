@@ -1,10 +1,87 @@
 #map {
 	height: 100vh;
 	float: right;
-	width: 70%;
+	width: 75%;
 }
 
 #mapwrapper {
 	background-color: white;
 	min-height: 100vh;
+	
+	&::before, &::after {
+		content: "";
+		display: table;
+	}
+	
+	&::after {
+		clear: both;
+	}
+}
+
+.map-sidebar {
+	position: fixed;
+	top: 0;
+    left: 0;
+    float: left;
+    width: 25%;
+    height: 100vh;
+    padding: 1em 1.5em 1em 1.5em;
+    background: #00008B;
+}
+
+.option-block {
+	h3 {
+		letter-spacing: 1px;
+		font-size: 16px;
+		text-transform: none;
+		padding-top: 0.25em;
+		padding-bottom: 0.25em;
+		cursor: pointer;
+		
+		&::after {
+			font-family: 'Glyphicons Halflings';  
+		    content: "\e080";  
+		    float: right;
+		    color: white;  
+		}
+	}
+	
+	.single-option {
+		margin-bottom: 20px;
+		
+		label {
+			letter-spacing: 1px;
+			
+		}
+	}
+	
+	.expandable-block {
+		transition: padding 0.5s, max-height 0.7s;
+		padding-bottom: 0px;
+		max-height: 0;
+		overflow: hidden;
+		
+		input[type='text'] {
+			height: 2.875rem;
+		}
+	}
+	
+	.btn-address {
+		margin-top: 25px;
+	}
+	
+	&.expanded {
+		
+		h3 {
+			&::after {
+				content: "\e114";
+			}
+		}
+		
+		.expandable-block {
+			padding-bottom: 20px;
+			height: auto;
+			max-height: 300px;
+		}
+	}
 }

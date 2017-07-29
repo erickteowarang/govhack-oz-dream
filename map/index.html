@@ -13,13 +13,45 @@
 		<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"
 		  integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
 		  crossorigin=""></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuMEayWUlqFRZvLZEimLkhb2CxSRi8x2g&libraries=places"></script>
 	</head>
 	<body>
 		<div id="mapwrapper">
-			<div class="container">
-				<div id="map">
-					
+			<div class="map-sidebar">
+				<div class="branding">
+					<h2>The Aussie Dream Chaser</h2>
 				</div>
+				<div class="option-block">
+					<h3>Home Address</h3>
+					<div class="expandable-block">
+						<input type="text" name="home-address" id="home-address" 
+						placeholder="Enter your address" onFocus="geolocate()" />
+					</div>
+				</div>
+				<div class="option-block">
+					<h3>Selected Facilities</h3>
+					<div class="expandable-block">
+						<div class="single-option">
+							<input type="checkbox" id="bbq-pit" name="bbq-pit">
+							<label for="bbq-pit">Public BBQ Spot</label>
+						</div>
+						<div class="single-option">
+							<input type="checkbox" id="bball-court" name="bball-court">
+							<label for="bball-court">Basketball Court</label>
+						</div>
+						<div class="single-option">
+							<input type="checkbox" id="public-park" name="public-park">
+							<label for="public-park">Public Parks</label>
+						</div>
+						<div class="single-option">
+							<input type="checkbox" id="food" name="food">
+							<label for="food">Cafe/Restaurant</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="map">
+				
 			</div>
 		</div>
 		
