@@ -17,7 +17,7 @@
 	
 	$.ajax({
         type: "GET",
-        url: "test.csv",
+        url: "../data/Skate_Parks.csv",
         dataType: "text",
         success: function(data) {
 	        processData(data);
