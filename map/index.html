@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="icon" href="../favicon-bom.png" type="image/png" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"
@@ -14,6 +15,25 @@
 		  integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
 		  crossorigin=""></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuMEayWUlqFRZvLZEimLkhb2CxSRi8x2g&libraries=places"></script>
+		<script type="text/javascript">
+			// Bias the autocomplete object to the user's geographical location,
+		  // as supplied by the browser's 'navigator.geolocation' object.
+		  function geolocate() {
+		    if (navigator.geolocation) {
+		      navigator.geolocation.getCurrentPosition(function(position) {
+		        var geolocation = {
+		          lat: position.coords.latitude,
+		          lng: position.coords.longitude
+		        };
+		        var circle = new google.maps.Circle({
+		          center: geolocation,
+		          radius: position.coords.accuracy
+		        });
+		        autocomplete.setBounds(circle.getBounds());
+		      });
+		    }
+		  }
+		</script>
 	</head>
 	<body>
 		<div id="mapwrapper">
@@ -21,43 +41,51 @@
 				<div class="branding">
 					<h2>The Aussie Dream Chaser</h2>
 				</div>
-				<div class="option-block">
+				<div class="option-block expanded">
 					<h3>Home Address</h3>
 					<div class="expandable-block">
 						<input type="text" name="home-address" id="home-address" 
-						placeholder="Enter your address" onFocus="geolocate()" />
+						placeholder="Enter your address" onFocus="geolocate()" /class="expander">
 					</div>
 				</div>
-				<div class="option-block">
+				<div class="option-block expanded">
 					<h3>Selected Facilities</h3>
 					<div class="expandable-block">
 						<div class="single-option">
-							<input type="checkbox" id="bbq-pit" name="bbq-pit">
+							<input type="checkbox" id="bbq-pit" name="bbq-pit" checked>
 							<label for="bbq-pit">Public BBQ</label>
 						</div>
 						<div class="single-option">
-							<input type="checkbox" id="bball-court" name="bball-court">
+							<input type="checkbox" id="bball-court" name="bball-court" checked>
 							<label for="bball-court">Basketball Court</label>
 						</div>
 						<div class="single-option">
-							<input type="checkbox" id="public-park" name="public-park">
+							<input type="checkbox" id="public-park" name="public-park" checked>
 							<label for="public-park">Public Park</label>
 						</div>
 						<div class="single-option">
-							<input type="checkbox" id="food" name="food">
-							<label for="food">Cafe/Restaurant</label>
+							<input type="checkbox" id="dogpark" name="dogpark" checked>
+							<label for="dogpark">Dog Park</label>
+						</div>
+						<div class="single-option">
+							<input type="checkbox" id="aquapark" name="aquapark" checked>
+							<label for="aquapark">Aquatic Park</label>
+						</div>
+						<div class="single-option">
+							<input type="checkbox" id="skatepark" name="skatepark" checked>
+							<label for="skatepark">Skate Park</label>
 						</div>
 					</div>
 				</div>
-				<div class="option-block">
+				<div class="option-block expanded">
 					<h3>Distance to Facilities</h3>
-					<div class="expandable-block">
+					<div class="expandable-block distance-block">
 						<select name="distance" id="distance">
-							<option value="" disabled>Please select a distance</option>
-							<option value="1">1km</option>
-							<option value="2">2km</option>
-							<option value="5">5km</option>
-							<option value="10">10km</option>
+							<option value="" disabled selected>Please select a distance</option>
+							<option value="100">100m</option>
+							<option value="500">500m</option>
+							<option value="1000">1km</option>
+							<option value="2000">2km</option>
 						</select>
 					</div>
 				</div>

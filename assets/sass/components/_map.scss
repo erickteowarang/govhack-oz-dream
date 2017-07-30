@@ -24,9 +24,15 @@
     left: 0;
     float: left;
     width: 25%;
+    overflow-y: scroll;
     height: 100vh;
     padding: 1em 1.5em 1em 1.5em;
     background: #00008B;
+}
+
+#address-disclaimer {
+	margin-top: 15px;
+	font-size: 14px;
 }
 
 .option-block {
