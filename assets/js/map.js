@@ -131,7 +131,7 @@
 			var featureStyle = {
 				"color": fill_color,
 				"weight": 0.1,
-				"opacity": opacity,
+				"opacity": 0.3,
 				"fillColor": fill_color
 			};
 	
