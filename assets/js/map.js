@@ -181,45 +181,106 @@
 		}	
 	}
 	
+	//Accordion Script
 	$(".option-block h3").on("click", function() {
 		$(this).parent().toggleClass("expanded");
 	});
 	
+	
+	//Function to recenter the map around the person's desired address
 	function refreshMap() {
 		// Get the place details from the autocomplete object.
         var place = autocomplete.getPlace();
 		var newLat = place.geometry.location.lat();
 		var newLng = place.geometry.location.lng();
+		var selected_option = $('#distance option:selected');
+		$("#address-disclaimer").remove();
+		$("path[id^='home-layer-']").remove();	
 		if(marker !== '') {
 			mymap.removeLayer(marker);
 		}
 		marker = new L.marker([newLat, newLng]).addTo(mymap);
 		mymap.flyTo([newLat, newLng], 16);
+		
+		if(selected_option[0].value !== "") {
+			var markerPosition = marker.getLatLng();
+			
+			var feature = {
+				"type": "Feature",
+				"properties": {},
+				"geometry": {
+				"type": "Point",
+				"coordinates": [markerPosition.lng, markerPosition.lat]
+				}
+			};
+		
+			var buffered = turf.buffer(feature, selected_option[0].value, 'meters');
+			//Style for features
+			var featureStyle = {
+				"color": "#000",
+				"weight": 0.1,
+				"opacity": 0.7,
+				"fillColor": "#000"
+			};
+			
+			var homeLayer = L.geoJson(buffered,{
+			   style: featureStyle
+			}).addTo(mymap);
+			
+			homeLayer.eachLayer(function (layer) {
+			    layer._path.id = 'home-layer-' + counter;
+			    counter++;
+			});
+		} 
 	}
-	
-	// Bias the autocomplete object to the user's geographical location,
-	  // as supplied by the browser's 'navigator.geolocation' object.
-	  function geolocate() {
-	    if (navigator.geolocation) {
-	      navigator.geolocation.getCurrentPosition(function(position) {
-	        var geolocation = {
-	          lat: position.coords.latitude,
-	          lng: position.coords.longitude
-	        };
-	        var circle = new google.maps.Circle({
-	          center: geolocation,
-	          radius: position.coords.accuracy
-	        });
-	        autocomplete.setBounds(circle.getBounds());
-	      });
-	    }
-	  }
 
+	  //Clear facility if unchecked, reshow if checked
 	$('.single-option :checkbox').change(function () {
 		if(!$(this).is(":checked")) {
 			clearBuffer($(this).attr("id"));
 		} else {
 			readdBuffer($(this).attr("id"));
+		}
+	});
+	
+	//Adjust radius of circle if an address has been selected
+	$('#distance').on('change', function() {
+		var distanceValue = $(this).val();
+		var checkAddress = $("#home-address").val();
+		
+		if(checkAddress == "") {
+			$("<p id='address-disclaimer'>Please enter your address first before selecting a distance.</p>").appendTo(".distance-block");
+		} else {
+			$("#address-disclaimer").remove();
+			$("path[id^='home-layer-']").remove();	
+			var markerPosition = marker.getLatLng();
+			
+			var feature = {
+				"type": "Feature",
+				"properties": {},
+				"geometry": {
+				"type": "Point",
+				"coordinates": [markerPosition.lng, markerPosition.lat]
+				}
+			};
+		
+			var buffered = turf.buffer(feature, distanceValue, 'meters');
+			//Style for features
+			var featureStyle = {
+				"color": "#000",
+				"weight": 0.1,
+				"opacity": 0.7,
+				"fillColor": "#000"
+			};
+			
+			var homeLayer = L.geoJson(buffered,{
+			   style: featureStyle
+			}).addTo(mymap);
+			
+			homeLayer.eachLayer(function (layer) {
+			    layer._path.id = 'home-layer-' + counter;
+			    counter++;
+			});
 		}
 	});
 	
