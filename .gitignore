@@ -1,6 +1,14 @@
+<<<<<<< Updated upstream
 
 assets/sass/\.DS_Store
 
 data/\.DS_Store
 
 assets/\.DS_Store
+=======
+node_modules
+assets/sass/\.DS_Store 
+data/\.DS_Store 
+assets/\.DS_Store 
+.sass-cache
+>>>>>>> Stashed changes
