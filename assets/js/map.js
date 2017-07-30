@@ -49,7 +49,7 @@
 		//filter the data
 		filtered = pois.filter(sportsFilter);
 		filtered.forEach(function(d) {
-			sportsPolygons = drawBuffer(d,distanceFromSportsComplex,"#FF4500");
+			sportsPolygons = drawBuffer(d,distanceFromSportsComplex,"#FF4500", 0.2);
 		});
 		
 		//Creates a filter based on a field and criteria
@@ -62,7 +62,7 @@
 		
 		}
 			
-		function drawBuffer(d, buffer_radius, fill_color){
+		function drawBuffer(d, buffer_radius, fill_color, opacity){
 			latitude = +d.latitude;
 			longitude = +d.longitude;
 			
@@ -81,7 +81,7 @@
 			var featureStyle = {
 				"color": fill_color,
 				"weight": 0.1,
-				"opacity": 0.2,
+				"opacity": opacity,
 				"fillColor": fill_color
 			};
 	
@@ -126,6 +126,15 @@
 	      });
 	    }
 	  }
+
+	$('.single-option :checkbox').change(function () {
+	    if ($(this).is(':checked')) {
+	        alert("This would toggle on this option")
+	    } else {
+	        alert("This would toggle off this option")
+	    }
+	});
+
+}
 	
-})(jQuery);	
-	
+)(jQuery);	
