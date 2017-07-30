@@ -249,7 +249,9 @@
 		var checkAddress = $("#home-address").val();
 		
 		if(checkAddress == "") {
-			$("<p id='address-disclaimer'>Please enter your address first before selecting a distance.</p>").appendTo(".distance-block");
+			if($("#address-disclaimer").length > 0) {
+				$("<p id='address-disclaimer'>Please enter your address first before selecting a distance.</p>").appendTo(".distance-block");
+			}
 		} else {
 			$("#address-disclaimer").remove();
 			$("path[id^='home-layer-']").remove();	
