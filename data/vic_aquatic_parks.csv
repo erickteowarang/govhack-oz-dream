@@ -1,8 +1,8 @@
-CouncilID,Facility,Elements,Owner,Long,Lat
+CouncilID,Facility,Elements,Owner,LONGITUDE,LATITUDE
 1,Brown Hill Swimming Pool Brown Hill,"Outdoor 30m pool, Toddlers pool",Council,143.8967446,-37.5529477
 2,Eureka Swimming Pool Eureka,"Outdoor 50m pool, 25m pool, Toddlers pool",Council,143.8855622,-37.56420426
 3,Buninyong Swimming Pool Buninyong,"Outdoor 25m pool, Toddlers pool",Council,143.8881909,-37.65022377
-4,Ballarat Aquatic Centre Lake Garden,"Indoor pool hall, Activities rooms, Gym/Health Club, Gymnastics floor, CrËche and CafÈ",Council,143.8185695,-37.5509825
+4,Ballarat Aquatic Centre Lake Garden,"Indoor pool hall, Activities rooms, Gym/Health Club, Gymnastics floor, Crèche and Café",Council,143.8185695,-37.5509825
 5,Black Hill Swimming Pool Black Hill,"Outdoor 25m pool, Toddlers pool",Council,143.8725113,-37.54911772
 6,Ballarat Health Services (QE site) Ballarat,Indoor hydrotherapy pool,Ballarat Heath Services,143.8426536,-37.56352186
 7,St John of God Hospital Ballarat,Indoor hydrotherapy pool,St John of God Hospital,143.8463855,-37.55760143

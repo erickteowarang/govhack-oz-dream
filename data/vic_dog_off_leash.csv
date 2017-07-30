@@ -1,23 +1,23 @@
-"ID","Park_Name","Area_Ha","Comments","Address","Long","Lat"
-1,"Bon Thomas Reserve",5.8813,"None","57A Quinn Street, Deer Park",144.758334,-37.773524
-16,"Matthews Hill Reserve",4.1869,"Previously Tom O'Brien Reserve","1 - 41 Matthews Street, Sunshine",144.842276,-37.794558
-19,"Sydenham Basin Reserve",5.4980,"None","557 - 563 Melton Highway, Sydenham",144.760181,-37.695396
-18,"Roussac Reserve",0.6239,"Fully Enclosed Dog Off Leash Area","14 - 28 Somerset Drive, Sunshine North",144.828237,-37.757139
-17,"Nancy Street Reserve",1.3507,"Previously Nancy Whitesides Reserve","2 - 20 Fitzgerald Road, Sunshine West",144.794416,-37.782743
-14,"Kings/ Robertson Road Power Easement",15.0821,"None","553A Kings Road, Taylors Lakes",144.78098,-37.690476
-12,"Keilor Park Recreation Reserve",4.0101,"None","Stadium Drive, Keilor Park",144.858099,-37.715006
-11,"Keilor Downs Recreation Reserve",0.7261,"None","30 Belmont Avenue, Keilor Downs",144.795706,-37.723591
-10,"International Gardens Reserve",0.5644,"Fully Enclosed Dog Off Leash Area","24A Camdale Parade, St Albans",144.786696,-37.731771
-6,"Duke Street Reserve",0.3855,"Fully Fenced Area","226 Duke Street, Sunshine North",144.848728,-37.772449
-5,"Denton Avenue Reserve",8.8114,"West of Conservation Area","137A Denton Avenue, St Albans",144.808921,-37.76689
-7,"Goldsmith Avenue Reserve",6.4907,"None","53 Goldsmith Avenue, Delahey",144.774174,-37.721401
-4,"Davitt Drive Reserve",0.4543,"Fully Enclosed Dog Off Leash Area","30 - 34 Davitt Drive, Deer Park",144.763731,-37.762427
-2,"Caroline Chisholm Park",3.8631,"None","38 Flora Street, Keilor",144.841083,-37.718613
-21,"Wahgunyah Reserve",0.4038,"Fully Fenced Area","14 - 42 Wahgunyah Drive, St Albans",144.827103,-37.750492
-3,"Collenso Street Reserve",1.5124,"Fully Enclosed Dog Off Leash Area","164 Glengala Road, Sunshine West",144.809154,-37.787321
-8,"Green Gully Reserve (Fenced Area)",0.4812,"Fully Fenced Area","151 Green Gully Road, Keilor Downs",144.82036,-37.725457
-8,"Green Gully Reserve (Unfenced Area)",43.1656,"Unfenced Area","151 Green Gully Road, Keilor Downs",144.818179,-37.721023
-9,"Gresham Way Reserve",5.6152,"None","149A The Avenue, Sunshine West",144.805525,-37.801078
-13,"Killeen Street Reserve",0.9970,"None","30A Killeen Street, Sunshine West",144.821059,-37.798291
-15,"Kororoit Creek Area",0.8770,"None","92 Forrest Street, Ardeer",144.807319,-37.777634
-20,"Taylors Lakes Power Easement",2.4880,"None","8A Rutherglen Way, Taylors Lakes",144.805863,-37.708928
+ID,Park_Name,Area_Ha,Comments,Address,LONGITUDE,LATITUDE
+1,Bon Thomas Reserve,5.8813,None,"57A Quinn Street, Deer Park",144.758334,-37.773524
+16,Matthews Hill Reserve,4.1869,Previously Tom O'Brien Reserve,"1 - 41 Matthews Street, Sunshine",144.842276,-37.794558
+19,Sydenham Basin Reserve,5.498,None,"557 - 563 Melton Highway, Sydenham",144.760181,-37.695396
+18,Roussac Reserve,0.6239,Fully Enclosed Dog Off Leash Area,"14 - 28 Somerset Drive, Sunshine North",144.828237,-37.757139
+17,Nancy Street Reserve,1.3507,Previously Nancy Whitesides Reserve,"2 - 20 Fitzgerald Road, Sunshine West",144.794416,-37.782743
+14,Kings/ Robertson Road Power Easement,15.0821,None,"553A Kings Road, Taylors Lakes",144.78098,-37.690476
+12,Keilor Park Recreation Reserve,4.0101,None,"Stadium Drive, Keilor Park",144.858099,-37.715006
+11,Keilor Downs Recreation Reserve,0.7261,None,"30 Belmont Avenue, Keilor Downs",144.795706,-37.723591
+10,International Gardens Reserve,0.5644,Fully Enclosed Dog Off Leash Area,"24A Camdale Parade, St Albans",144.786696,-37.731771
+6,Duke Street Reserve,0.3855,Fully Fenced Area,"226 Duke Street, Sunshine North",144.848728,-37.772449
+5,Denton Avenue Reserve,8.8114,West of Conservation Area,"137A Denton Avenue, St Albans",144.808921,-37.76689
+7,Goldsmith Avenue Reserve,6.4907,None,"53 Goldsmith Avenue, Delahey",144.774174,-37.721401
+4,Davitt Drive Reserve,0.4543,Fully Enclosed Dog Off Leash Area,"30 - 34 Davitt Drive, Deer Park",144.763731,-37.762427
+2,Caroline Chisholm Park,3.8631,None,"38 Flora Street, Keilor",144.841083,-37.718613
+21,Wahgunyah Reserve,0.4038,Fully Fenced Area,"14 - 42 Wahgunyah Drive, St Albans",144.827103,-37.750492
+3,Collenso Street Reserve,1.5124,Fully Enclosed Dog Off Leash Area,"164 Glengala Road, Sunshine West",144.809154,-37.787321
+8,Green Gully Reserve (Fenced Area),0.4812,Fully Fenced Area,"151 Green Gully Road, Keilor Downs",144.82036,-37.725457
+8,Green Gully Reserve (Unfenced Area),43.1656,Unfenced Area,"151 Green Gully Road, Keilor Downs",144.818179,-37.721023
+9,Gresham Way Reserve,5.6152,None,"149A The Avenue, Sunshine West",144.805525,-37.801078
+13,Killeen Street Reserve,0.997,None,"30A Killeen Street, Sunshine West",144.821059,-37.798291
+15,Kororoit Creek Area,0.877,None,"92 Forrest Street, Ardeer",144.807319,-37.777634
+20,Taylors Lakes Power Easement,2.488,None,"8A Rutherglen Way, Taylors Lakes",144.805863,-37.708928

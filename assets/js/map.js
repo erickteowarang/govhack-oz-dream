@@ -1,5 +1,5 @@
 (function($){
-	var mymap = L.map('map').setView([-37.8136, 144.9631], 12);
+	var mymap = L.map('map').setView([-35.2809, 149.1300], 13);
 	var marker = '';
 	var options = {
 	  componentRestrictions: {country: 'au'}
@@ -7,24 +7,36 @@
 	var autocomplete = new google.maps.places.Autocomplete($("#home-address")[0], options);
 	
 	//Criteria
-	var distanceFromSportsComplex = 400;
+	var distanceFromSportsComplex = 100;
 	var distanceFromBBQs = 500;
+	
 	//Intersection Polygons
+	var actbbqPolygons = [];
+	var dogparkPolygons = [];
+	var actskatePolygons = [];
+	var actfitnessPolygons = [];
+	var bballPolygons = [];
+	var fitnessPolygons = [];
+	var dogparkPolygons = [];
+	var vicbbqPolygons = [];
+	var vicbballPolygons = [];
+	var vicdogparkPolygons = [];
+	var vicaquaPolygons = [];
+	var vicplaygroundPolygons = [];
 	var sportsPolygons = [];
-	var bbqPolygons = [];
 	
 	queue()
 	 .defer(d3.csv, '../data/act_basketball_courts.csv')
 	 .defer(d3.csv, '../data/act_fenced_dog_parks.csv')
 	 .defer(d3.csv, '../data/act_fitness_sites.csv')
 	 .defer(d3.csv, '../data/act_public_bbqs.csv')
-	 .defer(d3.csv, '../data/act_public_furniture.csv')
 	 .defer(d3.csv, '../data/act_skate_parks.csv')
 	 .defer(d3.csv, '../data/vic_aquatic_parks.csv')
 	 .defer(d3.csv, '../data/vic_brimbank_playgrounds.csv')
 	 .defer(d3.csv, '../data/vic_dog_off_leash.csv')
 	 .defer(d3.csv, '../data/vic_golden_plains_Basketball_Courts.csv')
-	 .defer(d3.csv, '../data/vic_golden_plains_community_facilitiesstadium.csv')
+	 .defer(d3.csv, '../data/vic_places_of_interest.csv')
+	 .defer(d3.csv, '../data/vic_public_barbecues.csv')
 	 .await(addData);
 			
 	autocomplete.addListener('place_changed', refreshMap);
@@ -37,17 +49,55 @@
 		id: 'mapbox.streets'
 	}).addTo(mymap);
 	
-	function addData(error, bbqs, pois) {
-		//Draw buffered barbeque locations 			
-		bbqs.forEach(function(d) {
-			bbqPolygons = drawBuffer(d,distanceFromBBQs,"#ff7800");
+	function addData(error, actbball, dogparks, fitness, actbbq, actskate, vicaqua, vicplayground, vicdogpark, vicbball, vicpois, vicbbqs) {
+		
+		
+		//Draw buffered locations for all variables
+		actbball.forEach(function(d) {
+			bballPolygons = drawBuffer(d,distanceFromBBQs,"#ff7800");
+		});
+		
+		dogparks.forEach(function(d) {
+			dogparkPolygons = drawBuffer(d,distanceFromBBQs,"#ff7800");
+		});
+		
+		fitness.forEach(function(d) {
+			actfitnessPolygons = drawBuffer(d,distanceFromBBQs,"#ff7800");
+		});
+				
+		actbbq.forEach(function(d) {
+			actbbqPolygons = drawBuffer(d,distanceFromBBQs,"#ff7800");
+		});
+		
+		actskate.forEach(function(d) {
+			actskatePolygons = drawBuffer(d,distanceFromBBQs,"#ff7800");
+		});
+		
+		vicaqua.forEach(function(d) {
+			vicaquaPolygons = drawBuffer(d,distanceFromBBQs,"#ff7800");
+		});
+		
+		vicbball.forEach(function(d) {
+			vicbballPolygons = drawBuffer(d,distanceFromBBQs,"#ff7800");
+		});
+		
+		vicplayground.forEach(function(d) {
+			vicplaygroundPolygons = drawBuffer(d,distanceFromBBQs,"#ff7800");
+		});
+		
+		vicdogpark.forEach(function(d) {
+			vicdogparkPolygons = drawBuffer(d,distanceFromBBQs,"#ff7800");
+		});
+		
+		vicbbqs.forEach(function(d) {
+			vicbbqPolygons = drawBuffer(d,distanceFromBBQs,"#ff7800");
 		});
 				
 		//Draw buffered sports complex locations		
 		//Retrieve the filter
 		sportsFilter = filterCreator("subtheme","Major Sports Recreation Facility");
 		//filter the data
-		filtered = pois.filter(sportsFilter);
+		filtered = vicpois.filter(sportsFilter);
 		filtered.forEach(function(d) {
 			sportsPolygons = drawBuffer(d,distanceFromSportsComplex,"#FF4500");
 		});
@@ -63,8 +113,8 @@
 		}
 			
 		function drawBuffer(d, buffer_radius, fill_color){
-			latitude = +d.latitude;
-			longitude = +d.longitude;
+			latitude = +d.LATITUDE;
+			longitude = +d.LONGITUDE;
 			
 			//Convert point to feature
 			var feature = {
