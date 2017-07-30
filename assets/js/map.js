@@ -99,7 +99,7 @@
 		//filter the data
 		filtered = vicpois.filter(sportsFilter);
 		filtered.forEach(function(d) {
-			sportsPolygons = drawBuffer(d,distanceFromSportsComplex,"#FF4500");
+			sportsPolygons = drawBuffer(d,distanceFromSportsComplex,"#FF4500", 0.2);
 		});
 		
 		//Creates a filter based on a field and criteria
@@ -131,7 +131,7 @@
 			var featureStyle = {
 				"color": fill_color,
 				"weight": 0.1,
-				"opacity": 0.2,
+				"opacity": opacity,
 				"fillColor": fill_color
 			};
 	
@@ -176,6 +176,15 @@
 	      });
 	    }
 	  }
+
+	$('.single-option :checkbox').change(function () {
+	    if ($(this).is(':checked')) {
+	        alert("This would toggle on this option")
+	    } else {
+	        alert("This would toggle off this option")
+	    }
+	});
+
+}
 	
-})(jQuery);	
-	
+)(jQuery);	
