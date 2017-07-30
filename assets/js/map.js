@@ -14,8 +14,17 @@
 	var bbqPolygons = [];
 	
 	queue()
-	 .defer(d3.csv, '../data/public_barbecues.csv')
-	 .defer(d3.csv, '../data/places_of_interest.csv')
+	 .defer(d3.csv, '../data/act_basketball_courts.csv')
+	 .defer(d3.csv, '../data/act_fenced_dog_parks.csv')
+	 .defer(d3.csv, '../data/act_fitness_sites.csv')
+	 .defer(d3.csv, '../data/act_public_bbqs.csv')
+	 .defer(d3.csv, '../data/act_public_furniture.csv')
+	 .defer(d3.csv, '../data/act_skate_parks.csv')
+	 .defer(d3.csv, '../data/vic_aquatic_parks.csv')
+	 .defer(d3.csv, '../data/vic_brimbank_playgrounds.csv')
+	 .defer(d3.csv, '../data/vic_dog_off_leash.csv')
+	 .defer(d3.csv, '../data/vic_golden_plains_Basketball_Courts.csv')
+	 .defer(d3.csv, '../data/vic_golden_plains_community_facilitiesstadium.csv')
 	 .await(addData);
 			
 	autocomplete.addListener('place_changed', refreshMap);
