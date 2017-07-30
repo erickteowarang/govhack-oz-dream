@@ -61,7 +61,8 @@
 			display: block;
 			margin: (_size(element-margin) * 1.25) 0;
 			width: 100%;
-
+			max-height: 320px;
+			overflow: hidden;
 			img {
 				width: 100%;
 			}
